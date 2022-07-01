@@ -1,20 +1,13 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import Head from 'next/head';
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
-    <div >
+    <div>
       <Head>
         <title>Contato</title>
       </Head>
 
-      <main>
-       Contato
-      </main>
-
-
+      <main>Contato</main>
     </div>
-  )
+  );
 }
-
-export default Home
