@@ -1,7 +1,7 @@
 <h2 align="center">Cadastro de Contato</h2>
 
 <p align="center">
-  <img alt="dark" width="400px" src="https://github.com/juliannelicon/contato-mui-hook-form/blob/master/public/contato.png" />
+  <img alt="Formulário de Contato" width="400px" src="https://github.com/juliannelicon/contato-mui-hook-form/blob/master/public/img/contato.png" />
 </p>
 
 ## Tecnologias
