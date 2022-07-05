@@ -1,8 +1,12 @@
-<h2 align="center">Cadastro de Contato</h2>
+<h1 align="center">Cadastro de Contato</h1>
+
+
 
 <p align="center">
-  <img alt="Formulário de Contato" width="400px" src="https://github.com/juliannelicon/contato-mui-hook-form/blob/master/public/img/contato.png" />
+  <img alt="Formulário de Contato" width="400px" src="https://github.com/juliannelicon/contato-mui-hook-form/blob/main/public/img/contato.png" />
 </p>
+
+<p align="center">Formulário contato utlizando React Hook Form e Yup para validação de preenchimento de campos obrigatórios</p>
 
 ## Tecnologias
 - [Next.js](https://nextjs.org/)
