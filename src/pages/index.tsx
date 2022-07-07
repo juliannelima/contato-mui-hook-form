@@ -1,22 +1,15 @@
 import Head from 'next/head';
 
-import {
-  Box,
-  Button,
-  Container,
-  InputAdornment,
-  Paper,
-  TextField,
-  Typography,
-} from '@mui/material';
-
-import { Send, CheckCircle, Cancel } from '@mui/icons-material';
+import { Box, Button, Container, Paper, Typography } from '@mui/material';
 
 import { useForm, Controller } from 'react-hook-form';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { green } from '@mui/material/colors';
+
+import { Send } from '@mui/icons-material';
+
+import Input from '../components/Input';
 
 interface IContato {
   nome: string;
@@ -88,36 +81,17 @@ export default function Home() {
                 field: { onChange, value },
                 fieldState: { error },
               }) => (
-                <TextField
+                <Input
                   label="Nome"
-                  variant="outlined"
                   size="small"
                   margin="normal"
-                  fullWidth
-                  required
-                  sx={{
-                    '& .MuiOutlinedInput-notchedOutline': {
-                      borderColor: value && value.length > 0 ? green[800] : '',
-                      borderWidth: value && value.length > 0 ? 2 : 1,
-                    },
-                    '& .MuiInputLabel-root': {
-                      color: value && value.length > 0 ? green[800] : '',
-                    },
-                  }}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        {value && value.length > 0 && !error && (
-                          <CheckCircle color="success" />
-                        )}
-                        {!!error && <Cancel color="error" />}
-                      </InputAdornment>
-                    ),
-                  }}
-                  onChange={onChange}
+                  variant="outlined"
                   value={value}
+                  onChange={onChange}
                   error={!!error}
                   helperText={error ? error.message : null}
+                  required
+                  fullWidth
                 />
               )}
             />
@@ -129,36 +103,17 @@ export default function Home() {
                 field: { onChange, value },
                 fieldState: { error },
               }) => (
-                <TextField
+                <Input
                   label="E-mail"
-                  variant="outlined"
                   size="small"
                   margin="normal"
-                  fullWidth
-                  required
-                  sx={{
-                    '& .MuiOutlinedInput-notchedOutline': {
-                      borderColor: value && value.length > 0 ? green[800] : '',
-                      borderWidth: value && value.length > 0 ? 2 : 1,
-                    },
-                    '& .MuiInputLabel-root': {
-                      color: value && value.length > 0 ? green[800] : '',
-                    },
-                  }}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        {value && value.length > 0 && !error && (
-                          <CheckCircle color="success" />
-                        )}
-                        {!!error && <Cancel color="error" />}
-                      </InputAdornment>
-                    ),
-                  }}
-                  onChange={onChange}
+                  variant="outlined"
                   value={value}
+                  onChange={onChange}
                   error={!!error}
                   helperText={error ? error.message : null}
+                  required
+                  fullWidth
                 />
               )}
             />
@@ -170,36 +125,17 @@ export default function Home() {
                 field: { onChange, value },
                 fieldState: { error },
               }) => (
-                <TextField
+                <Input
                   label="Assunto"
-                  variant="outlined"
                   size="small"
                   margin="normal"
-                  fullWidth
-                  required
-                  sx={{
-                    '& .MuiOutlinedInput-notchedOutline': {
-                      borderColor: value && value.length > 0 ? green[800] : '',
-                      borderWidth: value && value.length > 0 ? 2 : 1,
-                    },
-                    '& .MuiInputLabel-root': {
-                      color: value && value.length > 0 ? green[800] : '',
-                    },
-                  }}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        {value && value.length > 0 && !error && (
-                          <CheckCircle color="success" />
-                        )}
-                        {!!error && <Cancel color="error" />}
-                      </InputAdornment>
-                    ),
-                  }}
-                  onChange={onChange}
+                  variant="outlined"
                   value={value}
+                  onChange={onChange}
                   error={!!error}
                   helperText={error ? error.message : null}
+                  required
+                  fullWidth
                 />
               )}
             />
@@ -211,47 +147,29 @@ export default function Home() {
                 field: { onChange, value },
                 fieldState: { error },
               }) => (
-                <TextField
+                <Input
                   label="Mensagem"
-                  variant="outlined"
                   size="small"
                   margin="normal"
-                  fullWidth
+                  variant="outlined"
+                  value={value}
+                  onChange={onChange}
+                  error={!!error}
+                  helperText={error ? error.message : null}
                   required
+                  fullWidth
                   multiline
                   maxRows={7}
                   minRows={7}
-                  sx={{
-                    '& .MuiOutlinedInput-notchedOutline': {
-                      borderColor: value && value.length > 0 ? green[800] : '',
-                      borderWidth: value && value.length > 0 ? 2 : 1,
-                    },
-                    '& .MuiInputLabel-root': {
-                      color: value && value.length > 0 ? green[800] : '',
-                    },
-                  }}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        {value && value.length > 0 && !error && (
-                          <CheckCircle color="success" />
-                        )}
-                        {!!error && <Cancel color="error" />}
-                      </InputAdornment>
-                    ),
-                  }}
-                  onChange={onChange}
-                  value={value}
-                  error={!!error}
-                  helperText={error ? error.message : null}
                 />
               )}
             />
             <Button
+              fullWidth
               variant="contained"
               type="submit"
               startIcon={<Send />}
-              sx={{ marginY: 2, textTransform: 'none', float: 'right' }}
+              sx={{ marginY: 2, textTransform: 'none' }}
             >
               Enviar
             </Button>
